@@ -1,7 +1,7 @@
 export interface DataSneakerConfig {
   serverUrl: string;
   appKey?: string;
-  userId: string;
+  userId?: string;
   deviceId?: string;
   appVersion?: string;
   platform?: string;

@@ -9,7 +9,7 @@ const OFFLINE_QUEUE_KEY = 'ds_offline_queue';
 
 export class DataSneakerClient {
   private config: Required<
-    Pick<DataSneakerConfig, 'serverUrl' | 'userId' | 'flushInterval' | 'maxBatchSize' | 'maxQueueSize' | 'debug'>
+    Pick<DataSneakerConfig, 'serverUrl' | 'flushInterval' | 'maxBatchSize' | 'maxQueueSize' | 'debug'>
   > &
     DataSneakerConfig;
   private deviceId: string;
@@ -56,7 +56,7 @@ export class DataSneakerClient {
 
     const payload: EventPayload = {
       event_id: generateUUID(),
-      user_id: this.config.userId,
+      user_id: this.config.userId ?? '',
       device_id: this.deviceId,
       session_id: this.sessionId,
       event_type: event.eventType,
